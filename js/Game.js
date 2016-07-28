@@ -95,6 +95,15 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
             this.isDead = true;
             this.enemy.animations.play('dead');
             this.soundDead.play();
+            enemies.forEach(function(item, i){
+                if(item===this){
+                    enemies.splice(i,1);
+                }
+            }.bind(this));
+            setTimeout(function(){
+                this.enemy.kill();
+            }.bind(this),1000);
+
         }
 
     };
