@@ -11,7 +11,7 @@ function attackStopped(){
 }
 //ENEMY-PARENT OBJECT
 
-function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,attackDistance,speed,hitForce,hitFrame){
+function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,attackDistance,speed,hitForce,hitFrame,orient){
 
     this.enemy = game.add.sprite(x,y,spriteName);
 
@@ -21,6 +21,7 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
     this.soundDamaged = game.add.audio(spriteName+'_damaged');
 
     this.attackDelay = attackDelay;
+    this.attackDistance = attackDistance;
     this.isAppear = false;
     this.isDead = false;
     this.enemy.enemyAppear = false;
@@ -34,11 +35,12 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
     this.maxhealth = health;
     this.hitForce = hitForce;
     this.hitFrame = hitFrame;
+    this.orient = orient;
 
-    this.enemy.anchor.setTo(0.5,0.5);
+    this.enemy.anchor.setTo(0.5,1);
 
     this.healthlineX = this.enemy.x;
-    this.healthlineY = this.enemy.y-this.enemy.height/2-10;
+    this.healthlineY = this.enemy.y-this.enemy.height-20;
 
     ///lifeline
     this.bmdb = game.add.bitmapData(104, 8);
@@ -67,10 +69,7 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
 
     this.bglife.visible = false;
     this.life.visible = false;
-
-
     ///
-
 
     this.create = function(){
 
@@ -83,10 +82,10 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
     this.redrawHealthLine = function(){
 
         this.bglife.x = this.enemy.x;
-        this.bglife.y = this.enemy.y-this.enemy.height/2-20;
+        this.bglife.y = this.enemy.y-this.enemy.height-20;
 
-        this.life.x = this.enemy.x-this.bglife.width/2+2;
-        this.life.y = this.enemy.y-this.enemy.height/2-20;
+        this.life.x = this.enemy.x-this.bglife.width+54;
+        this.life.y = this.enemy.y-this.enemy.height-20;
 
     };
     this.start = function(){
@@ -112,7 +111,7 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
 
         if(this.isAppear&&!this.isDead){
             if(Math.abs(this.enemy.x - player.x)<=goDistance){
-                if(Math.abs(this.enemy.x - player.x)<=attackDistance){
+                if(Math.abs(this.enemy.x - player.x)<=this.attackDistance){
 
                     if(!this.inAttack){
                         this.enemy.animations.play('attack');
@@ -121,24 +120,46 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
                     }
                 }else{
                     this.inAttack = false;
-                    if(this.enemy.x - player.x>0){
-                        if(this.facing!="left"){
-                            this.facing = "left";
-                            this.enemy.scale.setTo(1,1);
-                        }
-                        this.enemy.animations.play('walk');
-                        this.redrawHealthLine();
-                        this.enemy.x-=1;
+                    if(!this.orient){
+                        if(this.enemy.x - player.x>0){
+                            if(this.facing!="left"){
+                                this.facing = "left";
+                                this.enemy.scale.setTo(1,1);
+                            }
+                            this.enemy.animations.play('walk');
+                            this.redrawHealthLine();
+                            this.enemy.x-=speed;
 
-                    }else{
-                        if(this.facing=="left"){
-                            this.facing="right";
-                            this.enemy.scale.setTo(-1,1);
+                        }else{
+                            if(this.facing=="left"){
+                                this.facing="right";
+                                this.enemy.scale.setTo(-1,1);
+                            }
+                            this.enemy.animations.play('walk');
+                            this.redrawHealthLine();
+                            this.enemy.x+=speed;
                         }
-                        this.enemy.animations.play('walk');
-                        this.redrawHealthLine();
-                        this.enemy.x+=speed;
+                    }else{
+                        if(this.enemy.x - player.x>0){
+                            if(this.facing!="right"){
+                                this.facing = "right";
+                                this.enemy.scale.setTo(-1,1);
+                            }
+                            this.enemy.animations.play('walk');
+                            this.redrawHealthLine();
+                            this.enemy.x-=speed;
+
+                        }else{
+                            if(this.facing=="right"){
+                                this.facing="left";
+                                this.enemy.scale.setTo(1,1);
+                            }
+                            this.enemy.animations.play('walk');
+                            this.redrawHealthLine();
+                            this.enemy.x+=speed;
+                        }
                     }
+
                 }
 
 
@@ -160,7 +181,9 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
             }.bind(this));
             setTimeout(function(){
                 this.enemy.kill();
+
             }.bind(this),1000);
+
         }
 
     };
@@ -484,56 +507,148 @@ function Darksaber(){
     Enemy.apply(this,arguments);
 
     this.create = function(){
+        //this.facing = "right";
         this.enemy.animations.add('idle', [
-            'idle_1.png',
-            'idle_2.png',
-            'idle_3.png',
-            'idle_4.png',
-            'idle_5.png',
-            'idle_6.png'
-        ], 6, true, false);
+            'stand_10.png',
+            'stand_11.png',
+            'stand_12.png',
+            'stand_13.png',
+            'stand_14.png',
+            'stand_15.png',
+            'stand_16.png',
+            'stand_17.png',
+            'stand_18.png',
+            'stand_19.png',
+            'stand_20.png',
+            'stand_21.png',
+            'stand_22.png',
+            'stand_23.png',
+            'stand_24.png'
+        ], 30, true, false);
         this.enemy.animations.add('walk', [
-            'go_1.png',
-            'go_2.png',
-            'go_3.png',
-            'go_4.png',
-            'go_5.png',
-            'go_6.png',
-            'go_7.png',
-            'go_8.png'
-        ], 10, true, false);
+            'walk_01.png',
+            'walk_02.png',
+            'walk_03.png',
+            'walk_04.png',
+            'walk_05.png',
+            'walk_06.png',
+            'walk_07.png',
+            'walk_08.png',
+            'walk_09.png',
+            'walk_10.png'
+        ], 30, true, false);
         this.enemy.enemyAppear=this.enemy.animations.add('appear', [
-            'appear_1.png',
-            'appear_2.png',
-            'appear_3.png',
-            'appear_4.png',
-            'appear_5.png',
-            'appear_6.png',
-            'appear_7.png',
-            'appear_8.png',
-            'appear_9.png',
-            'appear_10.png'
-        ], 10, false, false);
+            'stand_10.png'
+        ], 30, false, false);
         this.enemy.enemyAttack=this.enemy.animations.add('attack', [
-            'hit_1.png',
-            'hit_2.png',
-            'hit_3.png',
-            'hit_4.png',
-            'hit_5.png',
-            'hit_6.png',
-            'hit_7.png',
-            'hit_8.png'
-        ], 10, false, false);
+            'attack_1.png',
+            'attack_2.png',
+            'attack_3.png',
+            'attack_4.png',
+            'attack_5.png',
+            'attack_6.png',
+            'attack_7.png',
+            'attack_8.png',
+            'attack_9.png',
+            'attack_10.png',
+            'attack_11.png',
+            'attack_12.png',
+            'attack_13.png',
+            'attack_14.png',
+            'attack_15.png',
+            'attack_16.png',
+            'attack_17.png',
+            'attack_18.png',
+            'attack_19.png',
+            'attack_20.png',
+            'attack_21.png',
+            'attack_22.png',
+            'attack_23.png',
+            'attack_24.png',
+            'attack_25.png',
+            'attack_26.png',
+            'attack_27.png',
+            'attack_28.png',
+            'attack_29.png',
+            'attack_30.png',
+            'attack_31.png',
+            'attack_32.png',
+            'attack_33.png'
+        ], 30, false, false);
         this.enemy.animations.add('dead', [
-            'die_1.png',
-            'die_2.png',
-            'die_3.png',
-            'die_4.png',
-            'die_5.png',
-            'die_6.png',
-            'die_7.png',
-            'die_8.png'
-        ], 10, false, false);
+            'death_30.png',
+            'death_31.png',
+            'death_32.png',
+            'death_33.png',
+            'death_34.png',
+            'death_35.png',
+            'death_36.png',
+            'death_37.png',
+            'death_38.png',
+            'death_39.png',
+            'death_40.png',
+            'death_41.png',
+            'death_42.png',
+            'death_43.png',
+            'death_44.png',
+            'death_45.png',
+            'death_46.png',
+            'death_47.png',
+            'death_48.png',
+            'death_49.png',
+            'death_50.png',
+            'death_51.png',
+            'death_52.png',
+            'death_53.png',
+            'death_54.png',
+            'death_55.png',
+            'death_56.png',
+            'death_57.png',
+            'death_58.png',
+            'death_59.png',
+            'death_60.png',
+            'death_61.png',
+            'death_62.png',
+            'death_63.png',
+            'death_64.png',
+            'death_65.png',
+            'death_66.png',
+            'death_67.png',
+            'death_68.png',
+            'death_69.png',
+            'death_70.png',
+            'death_71.png',
+            'death_72.png',
+            'death_73.png',
+            'death_74.png',
+            'death_75.png',
+            'death_76.png',
+            'death_77.png',
+            'death_78.png',
+            'death_79.png',
+            'death_80.png',
+            'death_81.png',
+            'death_82.png',
+            'death_83.png',
+            'death_84.png',
+            'death_85.png',
+            'death_86.png',
+            'death_87.png',
+            'death_88.png',
+            'death_89.png',
+            'death_90.png',
+            'death_91.png',
+            'death_92.png',
+            'death_93.png',
+            'death_94.png',
+            'death_95.png',
+            'death_96.png',
+            'death_97.png',
+            'death_98.png',
+            'death_99.png',
+            'death_100.png',
+            'death_101.png'
+        ], 40, false, false);
         enemies.push(this);
     };
     return this;
@@ -762,27 +877,23 @@ Knight.Game.prototype = {
 
     },
     buildEnemies: function(){
-
-        zombie = new Zombie(this,1000,680,'zombie',80,800,500,350,120,1,7,15);
+//Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,attackDistance,speed,hitForce,hitFrame)
+        zombie = new Zombie(this,1000,770,'zombie',80,800,500,350,120,1,7,15);
         zombie.create();
 
-
-        dracula = new Dracula(this,1800,675,'dracula',100,800,500,450,130,2,13,26);
+        dracula = new Dracula(this,2200,770,'dracula',100,800,500,450,130,2,13,26);
         dracula.create();
 
-
-        golem = new Golem(this,2500,665,'golem',120,1000,500,380,250,1,15,23);
+        golem = new Golem(this,3000,770,'golem',100,1000,500,380,250,1,15,23);
         golem.create();
 
-
-        skeleton = new Skeleton(this,3500,675,'skeleton',50,500,500,350,120,2,7,15);
+        skeleton = new Skeleton(this,4500,780,'skeleton',50,500,500,350,120,2,7,15);
         skeleton.create();
 
-
-        skeleton2 = new Skeleton2(this,4500,660,'skeleton2',120,800,500,350,120,1,10,13);
+        skeleton2 = new Skeleton2(this,7000,790,'skeleton2',120,800,800,350,120,1,10,13);
         skeleton2.create();
 
-        darksaber = new Darksaber(this,8000,660,'darksaber',120,800,500,350,120,1,10,13);
+        darksaber = new Darksaber(this,10000,800,'darksaber',120,1000,1000,850,200,5,20,13,1);
         darksaber.create();
 
     },
@@ -906,7 +1017,7 @@ Knight.Game.prototype = {
                     item.start();
                 }
                 //Collisions check
-                if (inContact(player, item.enemy)) {
+                if (inContact(player, item)) {
 
                     if (item.hit) {
                         player.body.health -= item.hitForce;
@@ -946,12 +1057,15 @@ Knight.Game.prototype = {
 
             }.bind(this));
         }
+        if(enemies.length==0){
+            win.call(this);
+        }
     }
 
 };
 
 function inContact(obj1, obj2){
-    if((Math.abs(obj1.x-obj2.x)<120)&&(Math.abs(obj1.y-obj2.y)<120)){
+    if((Math.abs(obj1.x-obj2.enemy.x)<obj2.attackDistance)&&(Math.abs(obj1.y-obj2.enemy.y+obj2.enemy.height/2)<120)){
     return true;
     }
 }
@@ -963,7 +1077,7 @@ function gameover(){
     this.soundGame_over.play();
 }
 function win(){
-    this.startPrompt = this.add.bitmapText(this.camera.width / 2-200, this.camera.height / 2-50,'font','WIN!!',80);
+    this.startPrompt = this.add.bitmapText(this.camera.width / 2-120, this.camera.height / 2-50,'font','WIN!!',80);
     this.startPrompt.fixedToCamera = true;
     this.soundWin.play();
 }
