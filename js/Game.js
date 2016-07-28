@@ -103,7 +103,6 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
             setTimeout(function(){
                 this.enemy.kill();
             }.bind(this),1000);
-
         }
 
     };
