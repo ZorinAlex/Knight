@@ -1,0 +1,564 @@
+{"frames": {
+
+"darksaber_attack0005.png":
+{
+	"frame": {"x":404,"y":1,"w":329,"h":189},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":161,"y":143,"w":329,"h":189},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0009.png":
+{
+	"frame": {"x":1071,"y":1,"w":280,"h":196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":160,"y":133,"w":280,"h":196},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0010.png":
+{
+	"frame": {"x":1353,"y":1,"w":280,"h":196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":160,"y":133,"w":280,"h":196},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0022.png":
+{
+	"frame": {"x":735,"y":1,"w":334,"h":189},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":178,"y":130,"w":334,"h":189},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0023.png":
+{
+	"frame": {"x":735,"y":1,"w":334,"h":189},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":178,"y":130,"w":334,"h":189},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0027.png":
+{
+	"frame": {"x":793,"y":1321,"w":384,"h":319},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":166,"y":5,"w":384,"h":319},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0028.png":
+{
+	"frame": {"x":1179,"y":1335,"w":383,"h":319},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":166,"y":5,"w":383,"h":319},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0029.png":
+{
+	"frame": {"x":1564,"y":1335,"w":383,"h":319},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":166,"y":5,"w":383,"h":319},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0034.png":
+{
+	"frame": {"x":336,"y":1301,"w":455,"h":317},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":167,"y":11,"w":455,"h":317},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0038.png":
+{
+	"frame": {"x":562,"y":1007,"w":495,"h":292},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":126,"y":36,"w":495,"h":292},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0043.png":
+{
+	"frame": {"x":994,"y":199,"w":437,"h":251},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":130,"y":76,"w":437,"h":251},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0044.png":
+{
+	"frame": {"x":482,"y":192,"w":510,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":129,"y":77,"w":510,"h":249},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0047.png":
+{
+	"frame": {"x":1,"y":192,"w":479,"h":248},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":133,"y":79,"w":479,"h":248},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0052.png":
+{
+	"frame": {"x":933,"y":724,"w":337,"h":281},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":135,"y":48,"w":337,"h":281},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0054.png":
+{
+	"frame": {"x":1272,"y":742,"w":337,"h":281},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":135,"y":48,"w":337,"h":281},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0059.png":
+{
+	"frame": {"x":244,"y":443,"w":508,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":144,"y":61,"w":508,"h":269},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0060.png":
+{
+	"frame": {"x":244,"y":443,"w":508,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":144,"y":61,"w":508,"h":269},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0070.png":
+{
+	"frame": {"x":1,"y":1289,"w":333,"h":308},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":161,"y":24,"w":333,"h":308},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0071.png":
+{
+	"frame": {"x":1,"y":1289,"w":333,"h":308},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":161,"y":24,"w":333,"h":308},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0074.png":
+{
+	"frame": {"x":1059,"y":1025,"w":317,"h":294},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":158,"y":37,"w":317,"h":294},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0075.png":
+{
+	"frame": {"x":1059,"y":1025,"w":317,"h":294},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":158,"y":37,"w":317,"h":294},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_attack0076.png":
+{
+	"frame": {"x":1378,"y":1039,"w":317,"h":294},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":158,"y":37,"w":317,"h":294},
+	"sourceSize": {"w":655,"h":334}
+},
+"darksaber_hit0001.png":
+{
+	"frame": {"x":1654,"y":478,"w":267,"h":273},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":188,"y":41,"w":267,"h":273},
+	"sourceSize": {"w":455,"h":314}
+},
+"darksaber_hit0002.png":
+{
+	"frame": {"x":1654,"y":478,"w":267,"h":273},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":188,"y":41,"w":267,"h":273},
+	"sourceSize": {"w":455,"h":314}
+},
+"darksaber_hit0012.png":
+{
+	"frame": {"x":1433,"y":209,"w":333,"h":258},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":89,"y":52,"w":333,"h":258},
+	"sourceSize": {"w":455,"h":314}
+},
+"darksaber_hit0020.png":
+{
+	"frame": {"x":1,"y":714,"w":365,"h":280},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":38,"y":30,"w":365,"h":280},
+	"sourceSize": {"w":455,"h":314}
+},
+"darksaber_hit0024.png":
+{
+	"frame": {"x":754,"y":443,"w":177,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":218,"y":40,"w":177,"h":270},
+	"sourceSize": {"w":455,"h":314}
+},
+"darksaber_run0009.png":
+{
+	"frame": {"x":1,"y":1,"w":401,"h":186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":49,"y":50,"w":401,"h":186},
+	"sourceSize": {"w":463,"h":248}
+},
+"darksaber_run0014.png":
+{
+	"frame": {"x":1635,"y":1,"w":245,"h":206},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":160,"y":31,"w":245,"h":206},
+	"sourceSize": {"w":463,"h":248}
+},
+"darksaber_stand0007.png":
+{
+	"frame": {"x":1768,"y":209,"w":242,"h":267},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":242,"h":267},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0008.png":
+{
+	"frame": {"x":1768,"y":209,"w":242,"h":267},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":242,"h":267},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0019.png":
+{
+	"frame": {"x":933,"y":452,"w":244,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":244,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0020.png":
+{
+	"frame": {"x":933,"y":452,"w":244,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":244,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0021.png":
+{
+	"frame": {"x":933,"y":452,"w":244,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":244,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0022.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0023.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0024.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0025.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0034.png":
+{
+	"frame": {"x":1179,"y":452,"w":235,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":4,"w":235,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0035.png":
+{
+	"frame": {"x":1179,"y":452,"w":235,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":4,"w":235,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0036.png":
+{
+	"frame": {"x":1179,"y":452,"w":235,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":4,"w":235,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0041.png":
+{
+	"frame": {"x":1416,"y":469,"w":236,"h":271},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":236,"h":271},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0042.png":
+{
+	"frame": {"x":1416,"y":469,"w":236,"h":271},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":236,"h":271},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0055.png":
+{
+	"frame": {"x":1768,"y":209,"w":242,"h":267},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":242,"h":267},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0057.png":
+{
+	"frame": {"x":1768,"y":209,"w":242,"h":267},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":242,"h":267},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0068.png":
+{
+	"frame": {"x":933,"y":452,"w":244,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":244,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0069.png":
+{
+	"frame": {"x":933,"y":452,"w":244,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":244,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0071.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0072.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0073.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0075.png":
+{
+	"frame": {"x":1,"y":442,"w":241,"h":269},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":3,"w":241,"h":269},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0084.png":
+{
+	"frame": {"x":1179,"y":452,"w":235,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":4,"w":235,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0085.png":
+{
+	"frame": {"x":1179,"y":452,"w":235,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":4,"w":235,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0086.png":
+{
+	"frame": {"x":1179,"y":452,"w":235,"h":270},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":4,"w":235,"h":270},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0091.png":
+{
+	"frame": {"x":1416,"y":469,"w":236,"h":271},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":236,"h":271},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_stand0092.png":
+{
+	"frame": {"x":1416,"y":469,"w":236,"h":271},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":236,"h":271},
+	"sourceSize": {"w":254,"h":274}
+},
+"darksaber_walk0003.png":
+{
+	"frame": {"x":1611,"y":753,"w":283,"h":284},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":12,"w":283,"h":284},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0015.png":
+{
+	"frame": {"x":1,"y":996,"w":273,"h":291},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":2,"w":273,"h":291},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0016.png":
+{
+	"frame": {"x":1,"y":996,"w":273,"h":291},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":2,"w":273,"h":291},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0017.png":
+{
+	"frame": {"x":1,"y":996,"w":273,"h":291},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":2,"w":273,"h":291},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0025.png":
+{
+	"frame": {"x":1697,"y":1039,"w":282,"h":294},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":1,"w":282,"h":294},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0026.png":
+{
+	"frame": {"x":1697,"y":1039,"w":282,"h":294},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":1,"w":282,"h":294},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0033.png":
+{
+	"frame": {"x":276,"y":996,"w":284,"h":291},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":3,"w":284,"h":291},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0034.png":
+{
+	"frame": {"x":368,"y":714,"w":282,"h":280},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":12,"w":282,"h":280},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0035.png":
+{
+	"frame": {"x":368,"y":714,"w":282,"h":280},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":12,"w":282,"h":280},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0036.png":
+{
+	"frame": {"x":368,"y":714,"w":282,"h":280},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":12,"w":282,"h":280},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0037.png":
+{
+	"frame": {"x":652,"y":715,"w":279,"h":288},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":5,"w":279,"h":288},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0038.png":
+{
+	"frame": {"x":652,"y":715,"w":279,"h":288},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":5,"w":279,"h":288},
+	"sourceSize": {"w":300,"h":298}
+},
+"darksaber_walk0039.png":
+{
+	"frame": {"x":652,"y":715,"w":279,"h":288},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":5,"w":279,"h":288},
+	"sourceSize": {"w":300,"h":298}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "Darlsaber-3.png",
+	"format": "RGBA8888",
+	"size": {"w":2011,"h":1655},
+	"scale": "0.6",
+	"smartupdate": "$TexturePacker:SmartUpdate:d2e73f3c664f11928d87dafb51ba1d79:7b1eb8d369de3e1d4b8f020e82b8cdd7:59fa64223502934ef3af6e8663bccd66$"
+}
+}
