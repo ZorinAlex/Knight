@@ -29,6 +29,7 @@ Knight.Preloader.prototype = {
       this.load.atlasJSONHash('golem','assets/Monsters/Golem/Golem.png','assets/Monsters/Golem/Golem.json');
       this.load.atlasJSONHash('skeleton','assets/Monsters/Skeleton/Skeleton.png','assets/Monsters/Skeleton/Skeleton.json');
       this.load.atlasJSONHash('skeleton2','assets/Monsters/Skeleton2/Skeleton2.png','assets/Monsters/Skeleton2/Skeleton2.json');
+      this.load.atlasJSONHash('darksaber','assets/Monsters/Darksaber/Darksaber.png','assets/Monsters/Darksaber/Darksaber.json');
 
       this.load.audio('zombie_appear', 'assets/Monsters/Zombie/audio/appear.mp3');
       this.load.audio('zombie_attack', 'assets/Monsters/Zombie/audio/attack.mp3');
@@ -54,6 +55,11 @@ Knight.Preloader.prototype = {
       this.load.audio('skeleton2_attack', 'assets/Monsters/Skeleton2/audio/attack.mp3');
       this.load.audio('skeleton2_dead', 'assets/Monsters/Skeleton2/audio/dead.mp3');
       this.load.audio('skeleton2_damaged', 'assets/Monsters/Skeleton2/audio/damaged.mp3');
+
+      this.load.audio('darksaber_appear', 'assets/Monsters/Darksaber/audio/appear.mp3');
+      this.load.audio('darksaber_attack', 'assets/Monsters/Darksaber/audio/attack.mp3');
+      this.load.audio('darksaber_dead', 'assets/Monsters/Darksaber/audio/dead.mp3');
+      this.load.audio('darksaber_damaged', 'assets/Monsters/Darksaber/audio/damaged.mp3');
 
       this.load.audio('player_attack', 'assets/player/audio/attack.mp3');
       this.load.audio('player_dead', 'assets/player/audio/dead.mp3');

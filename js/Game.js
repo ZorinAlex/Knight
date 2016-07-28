@@ -31,20 +31,73 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
     this.hit = false;
     this.prevFrame = 0;
     this.health = health;
+    this.maxhealth = health;
     this.hitForce = hitForce;
     this.hitFrame = hitFrame;
 
     this.enemy.anchor.setTo(0.5,0.5);
 
+    this.healthlineX = this.enemy.x;
+    this.healthlineY = this.enemy.y-this.enemy.height/2-10;
+
+    ///lifeline
+    this.bmdb = game.add.bitmapData(104, 8);
+
+    this.bmdb.ctx.beginPath();
+    this.bmdb.ctx.rect(0, 0, 350, 176);
+    this.bmdb.ctx.fillStyle = '#00685e';
+    this.bmdb.ctx.fill();
+
+    this.bglife = game.add.sprite(this.healthlineX, this.healthlineY, this.bmdb);
+    this.bglife.anchor.set(0.5);
+
+    this.bmd = game.add.bitmapData(100, 5);
+    this.bmd.ctx.beginPath();
+    this.bmd.ctx.rect(0, 0, 300, 80);
+    this.bmd.ctx.fillStyle = '#00f910';
+    this.bmd.ctx.fill();
+
+    this.widthLife = new Phaser.Rectangle(0, 0, this.bmd.width, this.bmd.height);
+    this.totalLife = this.bmd.width;
+
+    this.life = game.add.sprite(this.healthlineX-this.bglife.width/2+2, this.healthlineY, this.bmd);
+    this.life.anchor.y = 0.5;
+    this.life.cropEnabled = true;
+    this.life.crop(this.widthLife);
+
+    this.bglife.visible = false;
+    this.life.visible = false;
+
+
+    ///
+
+
     this.create = function(){
 
     };
+    this.updateLifeLine = function(){
+        this.widthLife.width =(100*this.health)/this.maxhealth;
+        this.life.updateCrop();
 
+    };
+    this.redrawHealthLine = function(){
+
+        this.bglife.x = this.enemy.x;
+        this.bglife.y = this.enemy.y-this.enemy.height/2-20;
+
+        this.life.x = this.enemy.x-this.bglife.width/2+2;
+        this.life.y = this.enemy.y-this.enemy.height/2-20;
+
+    };
     this.start = function(){
 
         if(!this.isAppear){
+
             this.enemy.animations.play('appear');
             this.soundAppear.play();
+
+            this.bglife.visible = true;
+            this.life.visible = true;
         }
         this.enemy.enemyAppear.onComplete.add(animationStopped,this);
         this.enemy.enemyAttack.onComplete.add(attackStopped, this);
@@ -74,6 +127,7 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
                             this.enemy.scale.setTo(1,1);
                         }
                         this.enemy.animations.play('walk');
+                        this.redrawHealthLine();
                         this.enemy.x-=1;
 
                     }else{
@@ -82,6 +136,7 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
                             this.enemy.scale.setTo(-1,1);
                         }
                         this.enemy.animations.play('walk');
+                        this.redrawHealthLine();
                         this.enemy.x+=speed;
                     }
                 }
@@ -93,8 +148,11 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
         }
         if(this.health<=0&&!this.isDead){
             this.isDead = true;
+            this.bglife.visible = false;
+            this.life.visible = false;
             this.enemy.animations.play('dead');
             this.soundDead.play();
+
             enemies.forEach(function(item, i){
                 if(item===this){
                     enemies.splice(i,1);
@@ -421,6 +479,65 @@ function Skeleton2(){
     };
     return this;
 }
+function Darksaber(){
+
+    Enemy.apply(this,arguments);
+
+    this.create = function(){
+        this.enemy.animations.add('idle', [
+            'idle_1.png',
+            'idle_2.png',
+            'idle_3.png',
+            'idle_4.png',
+            'idle_5.png',
+            'idle_6.png'
+        ], 6, true, false);
+        this.enemy.animations.add('walk', [
+            'go_1.png',
+            'go_2.png',
+            'go_3.png',
+            'go_4.png',
+            'go_5.png',
+            'go_6.png',
+            'go_7.png',
+            'go_8.png'
+        ], 10, true, false);
+        this.enemy.enemyAppear=this.enemy.animations.add('appear', [
+            'appear_1.png',
+            'appear_2.png',
+            'appear_3.png',
+            'appear_4.png',
+            'appear_5.png',
+            'appear_6.png',
+            'appear_7.png',
+            'appear_8.png',
+            'appear_9.png',
+            'appear_10.png'
+        ], 10, false, false);
+        this.enemy.enemyAttack=this.enemy.animations.add('attack', [
+            'hit_1.png',
+            'hit_2.png',
+            'hit_3.png',
+            'hit_4.png',
+            'hit_5.png',
+            'hit_6.png',
+            'hit_7.png',
+            'hit_8.png'
+        ], 10, false, false);
+        this.enemy.animations.add('dead', [
+            'die_1.png',
+            'die_2.png',
+            'die_3.png',
+            'die_4.png',
+            'die_5.png',
+            'die_6.png',
+            'die_7.png',
+            'die_8.png'
+        ], 10, false, false);
+        enemies.push(this);
+    };
+    return this;
+}
 
 var player;
 var jumpHorVelocity = 0;
@@ -439,6 +556,7 @@ var golem;
 var skeleton;
 var skeleton2;
 var dracula;
+var darksaber;
 
 var playerDead;
 var playerAttack;
@@ -664,6 +782,9 @@ Knight.Game.prototype = {
         skeleton2 = new Skeleton2(this,4500,660,'skeleton2',120,800,500,350,120,1,10,13);
         skeleton2.create();
 
+        darksaber = new Darksaber(this,8000,660,'darksaber',120,800,500,350,120,1,10,13);
+        darksaber.create();
+
     },
     update:function(){
 
@@ -707,7 +828,7 @@ Knight.Game.prototype = {
                 } else if (!inJumpAttack && !inAttack && cursors.right.isDown && player.body.onFloor()) {
                     if (facing != 'right') {
                         player.scale.setTo(1, 1);
-                        player.animations.play('walk');
+                        //player.animations.play('walk');
                         facing = 'right';
                     } else {
                         if (this.shiftKey.isDown) {
@@ -739,7 +860,6 @@ Knight.Game.prototype = {
                 }
                 if (inJumpAttack) {
                     player.animations.play('jump_attack');
-                    player.soundAttack.play();
                 }
 
                 if (this.spaceKey.isDown && !inJumpAttack && !inAttack && player.body.onFloor()) {
@@ -773,6 +893,7 @@ Knight.Game.prototype = {
 
             if (playerJumpAttack.currentFrame.index == 44 && prevJumpFrame == 43) {
                 JumpHit = true;
+                player.soundAttack.play();
             } else {
                 JumpHit = false;
             }
@@ -793,10 +914,12 @@ Knight.Game.prototype = {
                     }
                     if (Hit) {
                         item.health -= 10;
+                        item.updateLifeLine();
                         item.soundDamaged.play();
                     }
                     if (JumpHit) {
                         item.health -= 15;
+                        item.updateLifeLine();
                         item.soundDamaged.play();
                     }
                 }
