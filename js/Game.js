@@ -9,6 +9,11 @@ function attackStopped(){
         this.inAttack = false;
     }.bind(this),this.attackDelay);
 }
+function attackStopped2(){
+    setTimeout(function(){
+        this.inAttack = false;
+    }.bind(this),this.attackDelay);
+}
 //ENEMY-PARENT OBJECT
 
 function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,attackDistance,speed,hitForce,hitFrame,orient){
@@ -22,15 +27,18 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
 
     this.attackDelay = attackDelay;
     this.attackDistance = attackDistance;
+    this.attackCount = 0;
     this.isAppear = false;
     this.isDead = false;
     this.enemy.enemyAppear = false;
     this.enemy.enemyAttack = false;
+    this.enemy.enemyAttack2 = false;
     this.appearDistance = appearDistance;
     this.facing = "left";
     this.inAttack = false;
     this.hit = false;
     this.prevFrame = 0;
+    this.prevFrame2 = 0;
     this.health = health;
     this.maxhealth = health;
     this.hitForce = hitForce;
@@ -100,11 +108,26 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
         }
         this.enemy.enemyAppear.onComplete.add(animationStopped,this);
         this.enemy.enemyAttack.onComplete.add(attackStopped, this);
+        if(this.enemy.enemyAttack2){
+            this.enemy.enemyAttack2.onComplete.add(attackStopped2, this);
+        }
+
 
         if(this.enemy.enemyAttack.currentFrame.index==this.hitFrame&&this.prevFrame==this.hitFrame-1){
             this.hit = true;
         }else{
             this.hit = false;
+        }
+        if(this.enemy.enemyAttack2&&this.attackCount%2!=0){
+
+            if(this.enemy.enemyAttack2.currentFrame.index==this.hitFrame+10&&this.prevFrame2==this.hitFrame+9){
+                this.hit = true;
+            }else{
+                this.hit = false;
+            }
+        }
+        if(this.enemy.enemyAttack2){
+            this.prevFrame2 = this.enemy.enemyAttack2.currentFrame.index;
         }
 
         this.prevFrame = this.enemy.enemyAttack.currentFrame.index;
@@ -114,7 +137,19 @@ function Enemy(game,x,y,spriteName,health,attackDelay,appearDistance,goDistance,
                 if(Math.abs(this.enemy.x - player.x)<=this.attackDistance){
 
                     if(!this.inAttack){
-                        this.enemy.animations.play('attack');
+                        if(this.enemy.enemyAttack2){
+                            if(this.attackCount%2==0){
+                                this.enemy.animations.play('attack2');
+                                this.attackCount++;
+                            }else{
+                                this.enemy.animations.play('attack');
+                                this.attackCount++;
+                            }
+
+                        }else{
+                            this.enemy.animations.play('attack');
+                        }
+
                         this.soundAttack.play();
                         this.inAttack = true;
                     }
@@ -489,8 +524,19 @@ function Skeleton2(){
             'attack_9.png',
             'attack_10.png'
         ], 10, false, false);
+        this.enemy.enemyAttack2=this.enemy.animations.add('attack2', [
+            'attack_2_1.png',
+            'attack_2_2.png',
+            'attack_2_3.png',
+            'attack_2_4.png',
+            'attack_2_5.png',
+            'attack_2_6.png',
+            'attack_2_7.png',
+            'attack_2_8.png',
+            'attack_2_9.png',
+            'attack_2_10.png'
+        ], 10, false, false);
         this.enemy.animations.add('dead', [
-            'dead_1.png',
             'dead_2.png',
             'dead_3.png',
             'dead_4.png',
